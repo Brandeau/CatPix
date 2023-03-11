@@ -1,0 +1,25 @@
+{
+  "name": "catpix",
+  "version": "1.0.0",
+  "description": "The cats of the family",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Brandeau/CatPix.git"
+  },
+  "keywords": [
+    "cats",
+    "server",
+    "test",
+    "pics"
+  ],
+  "author": "Diego Brandeau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brandeau/CatPix/issues"
+  },
+  "homepage": "https://github.com/Brandeau/CatPix#readme"
+}
