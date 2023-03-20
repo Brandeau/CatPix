@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Brandeau/CatPix.git"
+    "url": "https://github.com/Brandeau/CatPix"
   },
   "keywords": [
     "cats",
@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/Brandeau/CatPix/issues"
   },
-  "homepage": "https://github.com/Brandeau/CatPix#readme"
+  "homepage": "https://github.com/Brandeau/CatPix#readme",
+  "dependencies": {
+    "marvel": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.0"
+  }
 }

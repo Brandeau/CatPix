@@ -1,26 +1,35 @@
 const http = require('http');
 const fs = require('fs');
-const port = 3000;
 
-const server = http.createServer(function(req, res){
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    fs.readFile('index.html', function(error, data){
-        if(error){
-            res.writeHead(404);
-            res.write("Error: file not found");
-        }else{
-            res.write(data);
-        }
-        res.end();
+const server = http.createServer((req, res) => {
 
-    })
+    if(req.url === '/cleo'){
+
+        const imagePath = './public/images/cleo.jpeg';
+        res.writeHead(200, {'Content-Type': 'image/jpeg'});
+        const stream = fs.createReadStream(imagePath);
+        stream.pipe(res);
+      }else if(req.url === '/feli'){
+        const imagePath = './public/images/feli.jpeg';
+        res.writeHead(200, {'Content-Type': 'image/jpeg'});
+        const stream = fs.createReadStream(imagePath);
+        stream.pipe(res);
+      }else if(req.url === '/nita'){
+        const imagePath = './public/images/nita.jpeg';
+        res.writeHead(200, {'Content-Type': 'image/jpeg'});
+        const stream = fs.createReadStream(imagePath);
+        stream.pipe(res);
+      }else {
+        res.writeHead(404, {'Content-Type': 'text/plain'});
+        res.end('Not found');
+      }
 
 })
 
-server.listen(port, function(error){
-    if(error){
-        console.log("Something went wrong", error)
-    }else{
-        console.log("Server is listening to port" + port);
-    }
-})
+server.listen(8080, () => {
+    console.log('Server running at http://localhost:8080/');
+  });
+
+ 
+
+ 
