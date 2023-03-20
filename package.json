@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Brandeau/CatPix#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "marvel": "^1.1.2"
   },
   "devDependencies": {
