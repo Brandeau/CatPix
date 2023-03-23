@@ -1,35 +1,22 @@
-const http = require('http');
-const fs = require('fs');
+const express = require('express');
+const path = require('path');
 
-const server = http.createServer((req, res) => {
+const app = express();
 
-    if(req.url === '/cleo'){
-
-        const imagePath = './public/images/cleo.jpeg';
-        res.writeHead(200, {'Content-Type': 'image/jpeg'});
-        const stream = fs.createReadStream(imagePath);
-        stream.pipe(res);
-      }else if(req.url === '/feli'){
-        const imagePath = './public/images/feli.jpeg';
-        res.writeHead(200, {'Content-Type': 'image/jpeg'});
-        const stream = fs.createReadStream(imagePath);
-        stream.pipe(res);
-      }else if(req.url === '/nita'){
-        const imagePath = './public/images/nita.jpeg';
-        res.writeHead(200, {'Content-Type': 'image/jpeg'});
-        const stream = fs.createReadStream(imagePath);
-        stream.pipe(res);
-      }else {
-        res.writeHead(404, {'Content-Type': 'text/plain'});
-        res.end('Not found');
-      }
-
+app.get('/cleo', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public', 'images', 'cleo.jpeg'));
 })
 
-server.listen(8080, () => {
+app.get('/nita', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public', 'images', 'nita.jpeg'));
+})
+
+app.get('/feli', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public', 'images', 'feli.jpeg'));
+})
+
+app.listen(8080, () => {
     console.log('Server running at http://localhost:8080/');
   });
-
- 
 
  
