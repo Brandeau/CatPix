@@ -3,7 +3,7 @@ const path = require('path');
 
 const app = express();
 
-app.get('/cleo', (req, res) => {
+/* app.get('/cleo', (req, res) => {
   res.sendFile(path.join(__dirname, '/public', 'images', 'cleo.jpeg'));
 })
 
@@ -13,10 +13,13 @@ app.get('/nita', (req, res) => {
 
 app.get('/feli', (req, res) => {
   res.sendFile(path.join(__dirname, '/public', 'images', 'feli.jpeg'));
+})*/
+
+ app.get('/:name', (req, res) => {
+  res.sendFile(path.join(__dirname, '/public', 'images', `${req.params.name}.jpeg`));
 })
 
 app.listen(8080, () => {
     console.log('Server running at http://localhost:8080/');
   });
 
- 
